@@ -1,14 +1,15 @@
 <template>
-  <div class="demo-date-picker">
-    <div class="block">
+  
+  <div class="demo-date-picker" style="display: flex;">
+
       <el-date-picker v-model="value1" type="daterange" range-separator="至" start-placeholder="统计（约考）起始"
-        end-placeholder="统计（约考）结束" format="YYYY-MM-DD" value-format="YYYY-MM-DD" />
-      <el-button type="primary" style="margin: 20px;" @click="excuteclickwebsocket"
+        end-placeholder="统计（约考）结束" format="YYYY-MM-DD" value-format="YYYY-MM-DD" style="margin-right: 10px;"/>
+
+      <el-button type="primary"  @click="excuteclickwebsocket"
         :loading="progressshow">执行KSYJ_YYQK表</el-button>
-      
-      <el-button type="primary" @click="exportsfzmhmexcel">去重导出身份证号码</el-button>
-      <el-progress :percentage="progresspercentage" v-show="progressshow" :format="format"></el-progress>
-    </div>
+      <el-button type="primary" @click="exportsfzmhmexcel" style="margin-left: 10px;">去重导出身份证号码</el-button>
+      <el-progress :percentage="progresspercentage" v-show="progressshow" :format="format" style="margin-left: 10px;"></el-progress>
+
   </div>
 </template>
 
@@ -92,27 +93,7 @@ const exportsfzmhmexcel=()=>{
 </script>
 
 <style scoped>
-.demo-date-picker {
-  display: flex;
-  width: 100%;
-  padding: 0;
-  flex-wrap: wrap;
-}
-
-.demo-date-picker .block {
-  padding: 30px 0;
-  text-align: center;
-
-}
-
-.demo-date-picker .block:last-child {
-  border-right: none;
-}
-
-.demo-date-picker .demonstration {
-  display: block;
-  color: var(--el-text-color-secondary);
-  font-size: 14px;
-  margin-bottom: 20px;
+div {
+  padding: 20px;
 }
 </style>
